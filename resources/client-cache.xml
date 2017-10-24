@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<client-cache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://geode.apache.org/schema/cache"
+	   xsi:schemaLocation="http://geode.apache.org/schema/cache http://geode.apache.org/schema/cache/cache-1.0.xsd"
+	   version="1.0" copy-on-read="false">
+	<pool name="client" subscription-enabled="true" retry-attempts="2">
+		<locator host="172.16.227.2" port="55221"/>
+	</pool>
+
+	<region name="Region1">
+		<region-attributes pool-name="client" refid="PROXY" />
+	</region>
+	<region name="Region2">
+		<region-attributes pool-name="client" refid="PROXY" />
+	</region>
+	<region name="JoinedRegion">
+		<region-attributes pool-name="client" refid="PROXY" />
+	</region>
+</client-cache>
